@@ -9,6 +9,7 @@
 
 html {
     font-size: 16px;
+    /* scroll-behavior: smooth; */
 }
 
 :root {
@@ -79,7 +80,8 @@ html {
 
 
 
-.searchBar_section .fa-search {
+.searchBar_section .fa-search,
+.searchBar_section .fa-times {
     padding-right: 2rem;
     font-size: 23px;
     cursor: pointer;
@@ -97,6 +99,39 @@ html {
     box-shadow: var(--box-shadow);
 }
 
+/* search box css start here */
+.search_box_section {
+    display: none;
+}
+
+.search_box {
+    position: absolute;
+    z-index: 1;
+    right: 16rem;
+    width: 18rem;
+    background: #2885e0;
+    height: 3rem;
+    border-radius: 0.5rem;
+    display: grid;
+    place-content: center;
+}
+
+.showSearchBox {
+    display: block;
+}
+
+.search_box input {
+    width: inherit;
+    max-width: 90%;
+    height: 2rem;
+    margin: 0 auto;
+    padding: 0.2rem;
+    outline: none;
+    border-radius: 0.2rem;
+    border: none;
+}
+
+/* search box css end here */
 /* navbar css end here */
 /* consultation_btn css start here */
 .consultation_btn {
@@ -114,6 +149,11 @@ html {
         position: fixed;
         width: 100%;
         padding: 0 1rem 0 1rem;
+    }
+
+    .search_box {
+        right: 2rem;
+        margin-top: 5rem;
     }
 
     .Navbar .menu {
@@ -135,7 +175,8 @@ html {
         visibility: visible;
     }
 
-    .searchBar_section .fa-search {
+    .searchBar_section .fa-search,
+    .searchBar_section .fa-times {
         color: var(--search-bar-color);
         padding-right: 0rem;
 
@@ -1257,6 +1298,7 @@ html {
     height: 22rem;
     width: 80%;
     margin: 0 auto;
+    z-index: -1;
     /* margin-bottom:5rem; */
 }
 
@@ -1356,13 +1398,34 @@ html {
 /* <!-- sevent girl image css section end  --> */
 /* seventh second section items css end here */
 /* sevent section form start here */
+.sevent-section-items-three {
+    position: relative;
+}
+
+.sevent-section-items-three::after {
+    position: absolute;
+    content: "";
+    width: 20rem;
+    height: 20rem;
+    background-image: repeating-linear-gradient(45deg,
+            rgb(241, 241, 241, 0.5),
+            rgb(241, 241, 241, 0.5) 1px,
+            transparent 2px,
+            transparent 3px);
+    top: -1rem;
+    left: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
 .form {
     width: 20rem;
     display: flex;
     flex-direction: column;
-    /* background: rgb(28,109,190); */
     background: linear-gradient(145deg, #015cb5 50%, #1c6dbc 50%);
-    padding: 3rem 2rem;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .form input {
@@ -1424,9 +1487,14 @@ html {
          width:4rem;
          height: 4rem;
     } */
+    .sevent-section-items-three::after {
+        display: none;
+    }
+
     .form {
         margin-top: 2rem;
     }
+
 }
 
 @media (max-width:480px) {
@@ -1537,31 +1605,385 @@ html {
         row-gap: 2rem;
     }
 }
+
 @media (max-width: 800px) {
     .eight-section-items-sec .eight-list {
         grid-template-columns: repeat(2, 10rem);
     }
 }
+
 @media (max-width: 640px) {
-    .eight-section-items-first .eight-heading h1{
+    .eight-section-items-first .eight-heading h1 {
         width: 22rem;
         font-size: 2.4rem;
     }
 }
+
 @media (max-width: 480px) {
     .eight-section-items-sec .eight-list {
-        grid-template-columns: repeat(1,10rem);
+        grid-template-columns: repeat(1, 10rem);
     }
 }
+
 /* eight section media query end here */
 /* eight section css end here */
 /* footer css start here  */
- .footer-section{
-    background:url('../image/footerbg.jpeg');
-    background-size:cover;
-    background-position:center;
+footer {
+    background: url('../image/footerbg.jpeg');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    margin-top:15rem;
-    height:25rem;
- }
+    margin-top: 6rem;
+    height: 35rem;
+}
+
+.footer_list {
+    display: grid;
+    grid-template-columns: repeat(7, 11rem);
+    background: blue;
+    width: 76.32rem;
+    margin: 0 auto;
+    height: 6rem;
+    /* align-items: center; */
+    place-content: center;
+}
+
+.footer_list .footer_sub_list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 8rem;
+    font-size: 0.7rem;
+    font-family: var(--robot-font);
+    color: #bcb5b5;
+    letter-spacing: 1px;
+    font-weight: 400;
+    /* text-align: center; */
+}
+
+.footer_list .footer_sub_list span {
+    color: #fff;
+}
+
+.footer_list .footer_sub_list i {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.footer_list .footer_sub_list p {
+    margin-left: 0.7rem;
+}
+
+.footer_list .footer_sub_list .addess_para {
+    margin-left: 0.5rem;
+}
+
+.footer_list .footer_sub_list .addess_para span {
+    display: block;
+}
+
+.footer_list .footer_sub_list button {
+    padding: 1rem 2rem;
+    white-space: nowrap;
+    border: none;
+    border-radius: 2rem;
+    background: rgb(12, 26, 53);
+    /* coloir: #fff; */
+    color: #fff;
+    cursor: pointer;
+    -webkit-box-shadow: -2px 4px 15px 4px rgba(0, 0, 0, 0.27);
+    box-shadow: -2px 4px 15px 4px rgba(0, 0, 0, 0.27);
+}
+
+.footer_list .vertical_border {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #ece4e440;
+    display: grid;
+    place-self: center;
+    place-content: center;
+}
+
+/* footer list start here */
+.second_section_list .first_list .second_list {
+    display: grid;
+    grid-template-columns: repeat(6, 11rem);
+    place-content: center;
+    column-gap: 3rem;
+    margin-top: 4.5rem;
+}
+
+.second_list .submenu_list {
+    list-style: none;
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: 1.1rem;
+}
+
+.second_list .submenu_list .submenu_footer_one {
+    margin-top: 1rem;
+}
+
+.submenu_footer_one .sub_submenu_list {
+    list-style-type: none;
+}
+
+.submenu_footer_one .sub_submenu_list img {
+    margin-top: 1.1rem;
+}
+
+.second_list .submenu_list .submenu_footer_one .sub_submenu_list {
+    list-style: none;
+    line-height: 2rem;
+    color: var(--font-color);
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+}
+
+.submenu_list .submenu_footer_one .sub-submenu_list p {
+    white-space: nowrap;
+    font-size: 0.8rem;
+}
+
+.submenu_footer_one .sub_submenu_list p {
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color: var(--font-color);
+    font-family: var(--font-family);
+}
+
+/* email and telegram css start  */
+.submenu_footer_one .sub_submenu_list .email_telegram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    position: relative;
+    width: 100%;
+}
+
+.submenu_footer_one .sub_submenu_list .email_telegram::after {
+    position: absolute;
+    content: "";
+    border-bottom: 3px solid rgb(61, 72, 94);
+    width: inherit;
+    margin-top: 3.2rem;
+}
+
+.submenu_footer_one .sub_submenu_list .email_telegram p {
+    color: #fff;
+    margin-top: 0.9rem;
+}
+
+.submenu_footer_one .sub_submenu_list .email_telegram i {
+    color: #015cb4;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+/* email and telegram css end  */
+/* social media section start here */
+.submenu_footer_one .sub_submenu_list .social_media_icon {
+    color: #fefefe;
+    display: grid;
+    grid-template-columns: repeat(4, 3rem);
+    margin-top: 1rem;
+    place-content: center;
+}
+
+.submenu_footer_one .sub_submenu_list .social_media_icon i {
+    background: #081124;
+    /* background:red; */
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+/* social media section end here */
+/* last section start here */
+.footer_underline {
+    width: 100%;
+    border: 1px solid rgb(23, 35, 61);
+    margin-top: 6rem;
+}
+
+.last {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.last img {
+    width: 1rem;
+
+}
+
+.last p {
+    margin-left: 0.3rem;
+    font-size: 0.9rem;
+    color: var(--font-color);
+    font-family: var(--font-family);
+}
+
+.second_list .display_list_none {
+    display: none;
+}
+
+/* last section end here */
+
+/* footer list end here */
+/* footer media query start here */
+@media(max-width:1280px) {
+    .second_section_list .first_list .second_list {
+        padding-top: 6rem;
+    }
+
+    footer {
+        height: 40rem;
+    }
+
+    .second_list .display_list_none {
+        display: none;
+    }
+
+    .footer_list {
+        display: none;
+    }
+
+    .footer_list .vertical_border {
+        display: none;
+    }
+
+    .second_section_list .first_list .second_list {
+        grid-template-columns: repeat(3, 15rem);
+    }
+
+    .second_list .submenu_list:nth-child(4) {
+        margin-top: 2rem;
+    }
+
+    .second_list .submenu_list:nth-child(5) {
+        margin-top: 2rem;
+    }
+
+    .second_list .submenu_list:nth-child(6) {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width:960px) {
+    .second_section_list .first_list .second_list {
+        grid-template-columns: repeat(2, 15rem);
+    }
+
+    footer {
+        height: 48rem;
+    }
+}
+
+@media (max-width:624px) {
+    .second_section_list .first_list .second_list {
+        margin-left: 2rem;
+    }
+
+    .second_section_list .first_list .second_list {
+        place-content: inherit;
+    }
+
+    .second_section_list .first_list .second_list {
+        grid-template-columns: repeat(2, 11rem);
+    }
+
+    footer {
+        height: 90rem;
+    }
+}
+
+@media (max-width:480px) {
+
+    .second_section_list .first_list .second_list {
+        grid-template-columns: repeat(1, 11rem);
+    }
+
+    footer {
+        height: 95rem;
+    }
+
+    .second_list .submenu_list {
+        font-size: 2rem;
+    }
+}
+
+/* footer media query end here  */
 /* footer css end here  */
+
+/* upward and down arrow */
+
+.upWard_arrow {
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.upWard_arrow i {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+    position: absolute;
+    right: 1rem;
+    background: #015cb5;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+/* upward and doiwn arrow */
+
+/* underline section start here */
+.underline_section {
+    margin-top: 9rem;
+}
+
+.underline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.underline_icon {
+    display: flex;
+
+}
+
+.uderline_one {
+    border-top: 1px solid rgb(235, 238, 245);
+    width: 30%;
+    margin-right: 0.5rem;
+}
+
+.underline_icon .fa-chevron-left,
+.underline_icon .fa-chevron-right {
+    background: rgb(235, 238, 245);
+    width: 1.2rem;
+    height: 1.2rem;
+    display: grid;
+    place-content: center;
+    font-size: 0.8rem;
+    color: rgb(131, 146, 164);
+    margin: 0 0.5rem;
+}
+
+.underline_two {
+    border-bottom: 1px solid rgb(235, 238, 245);
+    width: 30%;
+    margin-left: 0.5rem;
+}
+
+/* underline section end here */

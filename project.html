@@ -53,13 +53,20 @@
                         </li>
                     </ul>
                     <div class="searchBar_section">
-                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <!-- <input type="text" placeholder="Searc..."> -->
+                        <i class="fa fa-search" aria-hidden="true" onclick="searchHandler()"></i>
                         <button class="Navbar_btn">Book Consultation</button>
                     </div>
+
                 </nav>
             </div>
             <!-- banner section start here -->
             <div class="banner">
+                <div class="search_box_section">
+                    <div class="search_box">
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
                 <div class="banner_section">
                     <div class="banner_image">
                         <div class="banner_text">
@@ -432,16 +439,31 @@
                 </div>
             </div>
             <!-- eight section end here  -->
+            <!-- underline section start here -->
+            <div class="underline_section">
+                <div class="underline">
+                    <div class="uderline_one">
+                        <!-- <hr> -->
+                    </div>
+                    <div class="underline_icon">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="underline_two">
+                        <!-- <hr> -->
+                    </div>
+                </div>
+            </div>
             <!-- footer section start here -->
             <footer>
                 <div class="footer-section">
                     <div class="footer">
                         <div class="footer-list-section footer-first-section">
-                            <ul class="footer-list">
-                                <li class="footer-sub-list">
+                            <ul class="footer_list">
+                                <li class="footer_sub_list">
                                     <img src="./assets/image/footer-logo.png" alt="footer image">
                                 </li>
-                                <li class="footer-sub-list">
+                                <li class="footer_sub_list">
                                     <i class="fa fa-phone-square" aria-hidden="true"></i>
                                     <p>Phone:
                                         <span>
@@ -449,10 +471,10 @@
                                         </span>
                                     </p>
                                 </li>
-                                <li class="vertical_border footer-sub-list">
+                                <li class="vertical_border footer_sub_list">
                                     |
                                 </li>
-                                <li class="footer-sub-list">
+                                <li class="footer_sub_list">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
                                     <p>
                                         Email:
@@ -461,23 +483,168 @@
                                         </span>
                                     </p>
                                 </li>
-                                <li class="vertical_border footer-sub-list">
+                                <li class="vertical_border footer_sub_list">
                                     |
                                 </li>
-                                <li class="footer-sub-list">
+                                <li class="footer_sub_list">
                                     <i class="fa-solid fa-location-pin"></i>
-                                    <p>
+                                    <p class="addess_para">
                                         Address:
                                         <span>
                                             9225 leslie street
                                         </span>
                                     </p>
                                 </li>
-                                <li class="footer-sub-list">
+                                <li class="footer_sub_list">
                                     <button>Book Consultation</button>
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+                <div class="footer_second_section">
+                    <div class="second_section">
+                        <div class="second_section_list">
+                            <div class="first_list">
+                                <ul class="second_list">
+                                    <li class="submenu_list">
+                                        Contact
+                                        <!-- submenu list one -->
+                                        <ul class="submenu_footer_one">
+                                            <li class="sub_submenu_list">
+                                                Phone: +1(647)236 0206
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Email:
+                                                <span> info@thetriump
+                                                    himmigration.ca</span>
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Address:
+                                                9225 leslie street
+                                            </li>
+                                        </ul>
+                                        <!-- end submenu list one -->
+                                    </li>
+
+
+
+                                    <!--  -->
+                                    <li class="submenu_list">
+                                        Quick Links
+                                        <!-- submenu list one -->
+                                        <ul class="submenu_footer_one">
+                                            <li class="sub_submenu_list">
+                                                About
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Meet Team
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Our Services
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Our Projects
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Contact
+                                            </li>
+                                        </ul>
+                                        <!-- end submenu list one -->
+                                    </li>
+                                    <li class="submenu_list">
+                                        Visa
+                                        <ul class="submenu_footer_one">
+                                            <li class="sub_submenu_list">
+                                                Student Visa
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Bussiness Visa
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Family Visa
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Travel Visa
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Work Visa
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenu_list">
+                                        Services
+                                        <ul class="submenu_footer_one">
+                                            <li class="sub_submenu_list">
+                                                Student Visa
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Bussiness Visa
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Family Visa
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Travel Visa
+                                            </li>
+                                            <li class="sub_submenu_list">
+                                                Work Visa
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenu_list">
+                                        Gallery
+                                        <ul class="submenu_footer_one">
+                                            <li class="sub_submenu_list">
+                                                <img src="./assets/image/footer-side-image.png" alt="gallery image">
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenu_list">
+                                        Newsletter
+                                        <ul class="submenu_footer_one">
+                                            <li class="sub_submenu_list">
+                                                <p>
+                                                    <span>
+                                                        Signup for our latest
+                                                        news & articles
+                                                    </span>
+                                                </p>
+                                                <div class="email_telegram">
+                                                    <p>Email Address </p>
+                                                    <i class="fa-solid fa-paper-plane"></i>
+                                                </div>
+                                                <div class="social_media_icon">
+                                                    <i class="fa-brands fa-twitter"></i>
+                                                    <i class="fa-brands fa-facebook"></i>
+                                                    <i class="fa-brands fa-pinterest"></i>
+                                                    <i class="fa-brands fa-instagram"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- first end here -->
+                        <!-- last section start here  -->
+                        <div class="last_section">
+                            <hr class="footer_underline">
+                            <div class="last">
+                                <img src="./assets/image/c_icon.png" alt="c image">
+                                <p>
+                                    Copyright reserved by Triumph Immigration
+                                </p>
+                            </div>
+                        </div>
+                        <!-- last section end here  -->
+                        <!-- last upward arrow start -->
+                        <div class="scroll_up">
+                            <div class="upWard_arrow" onclick="upHandler()">
+                                <i class="fa-solid fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <!-- last upward arrow end  -->
                     </div>
                 </div>
             </footer>
